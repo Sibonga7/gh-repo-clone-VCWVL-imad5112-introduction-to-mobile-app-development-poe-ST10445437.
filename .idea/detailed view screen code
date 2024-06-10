@@ -1,0 +1,293 @@
+Step 1: Add the following code in the activity_main.xml file
+
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+        <TableLayout
+            android:id="@+id/tableLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:stretchColumns="*">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/header_shape"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Phone"
+                    android:gravity="center"
+                    android:background="@drawable/header_shape"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="Email"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:background="@drawable/header_shape"
+                    android:textStyle="bold" />
+
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="188dp"
+        android:layout_marginTop="300dp"
+        android:orientation="vertical"
+        android:background="@drawable/cell_shape"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollview">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:background="@drawable/header_shape"
+                    android:text="Contact Details">
+                </TextView>
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:hint="Name"
+            android:background="@drawable/cell_shape"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/numberEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:hint="Number"
+            android:background="@drawable/cell_shape"
+            android:inputType="phone"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:hint="Email"
+            android:background="@drawable/cell_shape"
+            android:textAlignment="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="Add" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+Step 2: Right-click on the drawable folder then new then drawable resource file. Type the name as cell_shape.xml and hit enter. Now add the following code to that file
+
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape= "rectangle"  >
+    <solid android:color="@color/white"/>
+    <stroke android:width="1dp"  android:color="#000000"/>
+</shape>
+
+
+
+
+
+
+Step 3: Right-click on the drawable folder then new then drawable resource file. Type the name as header_shape.xml and hit enter. Now add the following code to that file
+
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape= "rectangle"  >
+    <solid android:color="@color/grey"/>
+    <stroke android:width="1dp"  android:color="#000000"/>
+</shape>
+
+
+
+
+
+
+Step 4: Go to the res folder then values then open colors.xml and add the following color to it
+
+    
+    <color name="grey">#8BC34A</color>
+    
+
+
+
+
+
+
+Step 5: Right-click on the Layout folder then new then layout resource file. type name table_row.xml and hit enter. add the following code to that file
+
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/removeButton">
+
+
+
+    <TextView
+        android:id="@+id/numberTextView"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="#000"
+        android:background="@drawable/cell_shape"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/nameTextView"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textColor="#000"
+        android:background="@drawable/cell_shape"
+        android:textSize="13sp" />
+
+
+    <TextView
+        android:id="@+id/emailTextView"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:textColor="#000"
+        android:background="@drawable/cell_shape"
+        android:textSize="13sp" />
+
+
+</TableRow>
+
+
+
+
+
+
+
+
+Step 6: Open the MainActivity.kt file and add the following code to that file
+
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TableLayout
+import android.widget.TableRow
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val addButton = findViewById<Button>(R.id.addButton)
+        val nameEditText = findViewById<EditText>(R.id.nameEditText)
+        val numberEditText = findViewById<EditText>(R.id.numberEditText)
+        val emailEditText = findViewById<EditText>(R.id.emailEditText)
+        val tableLayout = findViewById<TableLayout>(R.id.tableLayout)
+
+
+
+
+        addButton.setOnClickListener {
+            val name = nameEditText.text.toString()
+            val number = numberEditText.text.toString()
+            val email = emailEditText.text.toString()
+
+            val tableRow = LayoutInflater.from(this).inflate(R.layout.table_row, null) as TableRow
+            tableRow.findViewById<TextView>(R.id.nameTextView).setText(number)
+            tableRow.findViewById<TextView>(R.id.numberTextView).setText(name)
+            tableRow.findViewById<TextView>(R.id.emailTextView).setText(email)
+
+            val removeButton = tableRow.findViewById<TableRow>(R.id.removeButton)
+
+            removeButton.setOnClickListener {
+                tableLayout.removeView(tableRow)
+            }
+
+            tableLayout.addView(tableRow)
+
+        }
+    }
+}
+
+Now you can go and run your app
